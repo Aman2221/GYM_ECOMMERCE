@@ -1,0 +1,16 @@
+.products_div {
+  display: grid;
+  grid-template-columns: repeat(3, 100fr);
+  margin-top: 20px;
+}
+.addtocartBtn {
+  position: relative;
+  left: 30px;
+}
+
+@media screen and (max-width: 480px) {
+  .products_div {
+    display: flex;
+    flex-direction: column;
+  }
+}

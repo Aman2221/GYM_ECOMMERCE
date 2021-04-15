@@ -1,0 +1,10 @@
+.carousel {
+  height: 300px;
+}
+.carousel_innerDiv > img {
+  object-fit: contain;
+  height: 300px;
+  width: 100%;
+  position: relative;
+  top: 0px;
+}

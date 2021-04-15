@@ -1,0 +1,35 @@
+.card {
+  word-wrap: break-word;
+  width: 350px;
+  line-height: 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+}
+.card-image > img {
+  height: 250px;
+  width: 100%;
+  object-fit: contain;
+  border: 1px solid lightgray;
+  padding: 10px;
+}
+.card-title {
+  color: #000 !important;
+  font-size: 16px !important;
+}
+.card-content {
+  font-size: 13px !important;
+  padding: 10px !important;
+}
+
+.addtocartBtn {
+  position: relative;
+  left: 45px;
+}
+
+@media screen and (max-width: 480px) {
+  .card {
+    width: 100%;
+  }
+  .addtocartBtn {
+    left: 80px;
+  }
+}

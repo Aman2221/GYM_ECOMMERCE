@@ -1,0 +1,100 @@
+.contact {
+  width: 100%;
+}
+.contact_header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+  position: relative;
+  top: -20px;
+}
+.data {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  width: 300px;
+  padding: 10px;
+  padding-left: 20px;
+  height: 80px;
+  transition: transform 450ms;
+  cursor: pointer;
+}
+.data:hover {
+  transform: scale(1.05);
+}
+.contact_main {
+  margin-left: -100px;
+  margin-top: -70px;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  width: 100%;
+}
+.contact_inputs {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+.contact_inputs > input {
+  padding: 7px;
+}
+.messageArea {
+  height: 140px;
+  margin-top: 20px;
+  margin-left: 115px;
+  width: 1060px;
+}
+.sendMessageBtn {
+  margin-top: 20px;
+  width: 1060px;
+  margin-left: 115px;
+}
+.contact_heading {
+  margin-left: 110px;
+}
+
+@media screen and (max-width: 480px) {
+  .contact_header {
+    width: 100%;
+    padding: 10px;
+    top: 10px;
+    flex-direction: column;
+  }
+  .data {
+    flex-direction: row;
+    box-shadow: none;
+    width: 100%;
+    padding: 10px;
+    padding-left: 20px;
+    height: 80px;
+    transition: transform 450ms;
+    cursor: pointer;
+    border: 1px solid lightgray;
+    margin-top: 10px;
+  }
+  .data:hover {
+    transform: scale(1.03);
+  }
+  .contact_main {
+    margin-left: 0px;
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
+  }
+  .contact_inputs > input {
+    padding: 0px;
+  }
+  .messageArea {
+    height: 100px;
+    margin-top: 20px;
+    margin-left: 0px;
+    width: 100%;
+  }
+  .sendMessageBtn {
+    margin-top: 20px;
+    width: 100%;
+    margin-left: 0px;
+  }
+  .contact_heading {
+    margin-left: 0px;
+  }
+}
