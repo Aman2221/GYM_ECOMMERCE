@@ -19,10 +19,12 @@
   font-size: 13px !important;
   padding: 10px !important;
 }
-
+.card-action {
+  display: flex;
+  justify-content: space-between;
+}
 .addtocartBtn {
-  position: relative;
-  left: 45px;
+  left: 0px;
 }
 
 @media screen and (max-width: 480px) {
@@ -30,6 +32,6 @@
     width: 100%;
   }
   .addtocartBtn {
-    left: 80px;
+    left: 0px;
   }
 }

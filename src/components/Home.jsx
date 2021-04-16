@@ -3,6 +3,7 @@ import ReactCarousel from './ReactCarousel'
 import '../styles/Home.css'
 import Products from './Products'
 import { db } from '../firebase'
+import Footer from './Footer'
 
 const Home = () => {
 
@@ -32,6 +33,7 @@ const Home = () => {
                 ))
             }
             </div>    
+            <Footer />
         </div>
     )
 }

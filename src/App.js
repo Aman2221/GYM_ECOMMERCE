@@ -10,6 +10,7 @@ import { useStateValue } from './StateProvider';
 import { useEffect, useState } from 'react'
 import { auth, provider } from './firebase'
 import { db } from './firebase'
+import Admin from './components/Admin';
 function App() {
   const [{user}, dispatch] = useStateValue();
 
@@ -37,9 +38,7 @@ function App() {
       {
         !user ? (
           <div>
-            <Route path='/login'>
-                <Login/>
-              </Route>
+              <Login/>
               <Route path='/Register'>
                 <Register/>
               </Route>
@@ -66,6 +65,10 @@ function App() {
               <Route path='/userCart'>
                 <Nav />
                 <UserCart/>
+              </Route>
+              <Route path='/admin'>
+                <Nav />
+                <Admin/>
               </Route>
             </Switch>
           </div>
