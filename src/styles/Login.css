@@ -38,3 +38,18 @@
   border: none !important;
   outline: none !important;
 }
+.fas {
+  display: flex;
+  position: relative;
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+@media screen and (max-width: 480px) {
+  .fas {
+    display: flex;
+    position: relative;
+    font-size: 14px;
+    margin-left: 5px;
+  }
+}

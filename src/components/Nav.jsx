@@ -8,6 +8,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import CancelIcon from '@material-ui/icons/Cancel';
 import { Button } from '@material-ui/core';
 import { auth } from '../firebase'
+
 const Nav = () => {
     const [{basket}] = useStateValue();
 
@@ -16,6 +17,7 @@ const Nav = () => {
     const [showIcon,setShowIcon] = useState(false);
 
     const [HideIcon,setHideIcon] = useState(false);
+    const [{user}, dispatch] = useStateValue();
     const showSidebar = () =>
     {
         setSidebar(!sideBar); 
@@ -32,6 +34,10 @@ const Nav = () => {
     const handleLogout = () => {
         auth.signOut().then(() => {
             alert('user Logged out successfully 👋')
+            dispatch({
+                type : 'SET_USER',
+                user : null
+            })
         })
         history.push('/login')
     }
@@ -67,7 +73,6 @@ const Nav = () => {
                         <li><Link to='/userCart'>
                         <div className="cartCount"><p>{basket.length}</p><ShoppingCartIcon id='cartIcon' /></div>
                         </Link></li>
-                        <li><Link to='/login'>Login/SignUp</Link></li>
                         <li><Link to='/admin'>Admin</Link></li>
                         <li><Button onClick={handleLogout} variant="outlined" >Logout</Button></li>
                 </ul>

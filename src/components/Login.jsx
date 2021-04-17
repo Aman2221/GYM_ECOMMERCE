@@ -1,6 +1,6 @@
 import { Button, TextField } from '@material-ui/core'
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import '../styles/Login.css'
 import { auth } from '../firebase'
 import { useStateValue } from '../StateProvider'
@@ -10,7 +10,7 @@ const Login = () => {
     const [{user}, dispatch] = useStateValue();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
-
+    const history = useHistory();
     const handleSubmit = (e) => {
         e.preventDefault();
         auth.signInWithEmailAndPassword(email,password).then((result) => {
@@ -19,8 +19,9 @@ const Login = () => {
                 type : 'SET_USER',
                 user : result.user
             })
+            history.push('/');
         }).catch((e) => {
-            console.log(e.message);
+            alert(e.message);
         })
     }
 
@@ -37,9 +38,9 @@ const Login = () => {
                     <Button id='userButtons' variant="outlined" color="secondary" onClick={handleSubmit} >
                         Login
                     </Button>
-                    <h5>OR</h5>
                     <Link to='/register'>
-                        <Button href="#text-buttons" color="secondary">Register</Button>
+                        <Button href="#text-buttons" color="secondary">Register<i className="fas fa-arrow-circle-down"></i></Button>
+                        
                     </Link>
                 </form>
             </div>

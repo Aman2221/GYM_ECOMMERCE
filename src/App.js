@@ -37,12 +37,10 @@ function App() {
       <Router>
       {
         !user ? (
-          <div>
+            <div>
               <Login/>
-              <Route path='/Register'>
-                <Register/>
-              </Route>
-          </div>
+              <Register/>
+            </div>
         ) : (
           <div className="App">
             <Switch>

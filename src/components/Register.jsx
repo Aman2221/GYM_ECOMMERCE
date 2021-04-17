@@ -1,21 +1,27 @@
 import { Button, TextField } from '@material-ui/core'
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import '../styles/Register.css'
 import { auth } from '../firebase'
-
+import { useStateValue } from '../StateProvider'
 const Register = () => {
 
     const [name, setName] = useState();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
-
+    const history = useHistory();
+    const [{user}, dispatch] = useStateValue();
     const handleRegister = (e) => {
         e.preventDefault();
-        auth.createUserWithEmailAndPassword(email,password).then(() => {
+        auth.createUserWithEmailAndPassword(email,password).then((result) => {
             alert('User registerd successfully 😃 ')
+            dispatch({
+                type : 'SET_USER',
+                user : result.user
+            })
+            history.push('/');
         }).catch((e) => {
-            console.log(e.message);
+            alert(e.message);
         })
     }
 
@@ -36,9 +42,8 @@ const Register = () => {
                     <Button id='userButtons' variant="outlined" color="secondary" onClick={handleRegister} >
                         Register
                     </Button>
-                    <h5>OR</h5>
                     <Link to='/login'>
-                        <Button href="#text-buttons" color="secondary">Login</Button>
+                        <Button href="#text-buttons" color="secondary">Login<i className="fas fa-arrow-circle-up"></i></Button>
                     </Link>
                 </form>
             </div>
