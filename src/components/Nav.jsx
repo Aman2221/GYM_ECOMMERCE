@@ -60,10 +60,11 @@ const Nav = () => {
                             <li><Link to='/'>Home</Link></li>
                             <li><Link to='/contact'>Contact</Link></li>
                             <li><Link to='/userCart'>
-                            <div className="cartCount"><p>{basket.length}</p><ShoppingCartIcon id='cartIcon' /></div>
+                            Cart ({basket.length})
+                            { /* <div className="cartCount"><p>{basket.length}</p><ShoppingCartIcon id='cartIcon' /></div> */}
                             </Link></li>
-                            <li id='adminNav'><Link to='/admin'>Admin</Link></li>
-                            <li><Button id='logoutBtn'  onClick={handleLogout} variant="outlined" >Logout</Button></li>
+                            <li><Link to='/admin'>Admin</Link></li>
+                           <li onClick={handleLogout} ><Link to='/admin'>Logout</Link></li>
                         </ul>
                     </div>
                 <ul id="nav-mobile" className="right">
@@ -73,7 +74,7 @@ const Nav = () => {
                         <div className="cartCount"><p>{basket.length}</p><ShoppingCartIcon id='cartIcon' /></div>
                         </Link></li>
                         <li><Link to='/admin'>Admin</Link></li>
-                        <li><Button onClick={handleLogout} variant="outlined" >Logout</Button></li>
+                        <li onClick={handleLogout} ><Link to='/admin'>Logout</Link></li>
                 </ul>
             </nav>
         </div>
