@@ -14,7 +14,7 @@ const Login = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         auth.signInWithEmailAndPassword(email,password).then((result) => {
-            alert('Log in Succssfull  😃 ')
+            alert('Log in successful 😃 ')
             dispatch({
                 type : 'SET_USER',
                 user : result.user

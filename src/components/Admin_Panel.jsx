@@ -17,7 +17,7 @@ const Admin_Panel = () => {
             <div className="admin_data">
             <ul>
             <li>
-            <h6 className='table_head'><i className='bx bxs-calendar-check'></i>Name</h6>
+            <h6 className='table_head'>Name</h6>
                 {
                 proData.map((item) => (
                         <p className='table_data'>
@@ -26,7 +26,7 @@ const Admin_Panel = () => {
                 ))}
             </li>
             <li >
-                <h6 className='table_head'><i className="far fa-envelope"></i>Email</h6>
+                <h6 className='table_head'>Email</h6>
                 {
                 proData.map((item) => (
                     <p className='table_data'>
@@ -37,7 +37,7 @@ const Admin_Panel = () => {
             </li>
             
             <li >
-                <h6 className='table_head'><i class="fas fa-dollar-sign"></i>Price</h6>
+                <h6 className='table_head'>Price</h6>
                 {
                     proData.map((item) => (
                     <p className='table_data'>
@@ -46,7 +46,7 @@ const Admin_Panel = () => {
                 ))}
             </li>
             <li >
-                <h6 className='table_head'><i class="fas fa-archive"></i>Product Details</h6>
+                <h6 className='table_head'>Product Details</h6>
                 {
                     proData.map((item) => (
                     <p className='table_data'>
