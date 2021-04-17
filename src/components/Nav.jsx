@@ -62,7 +62,6 @@ const Nav = () => {
                             <li><Link to='/userCart'>
                             <div className="cartCount"><p>{basket.length}</p><ShoppingCartIcon id='cartIcon' /></div>
                             </Link></li>
-                            <li><Link to='/login'>Login/SignUp</Link></li>
                             <li id='adminNav'><Link to='/admin'>Admin</Link></li>
                             <li><Button id='logoutBtn'  onClick={handleLogout} variant="outlined" >Logout</Button></li>
                         </ul>
